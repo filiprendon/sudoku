@@ -1,0 +1,88 @@
+* {
+  user-select: none;
+}
+
+body {
+  min-height: 100dvh;
+  min-width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(9, 70px);
+  grid-template-rows: repeat(9, 70px);
+  gap: 1px;
+}
+.cell {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid lightgray;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.selected-cell {
+  background-color: #bbdefb;
+  border: none;
+}
+.selectedHelp {
+  background-color: #e2ebf3;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: 2px solid #344861;
+}
+.cell:nth-child(n + 19):nth-child(-n + 27) {
+  border-bottom: 2px solid #344861;
+}
+.cell:nth-child(n + 1):nth-child(-n + 9) {
+  border-top: 2px solid #344861;
+}
+.cell:nth-child(9n + 9) {
+  border-right: 2px solid #344861;
+}
+.cell:nth-child(n + 73):nth-child(-n + 81) {
+  border-bottom: 2px solid #344861;
+}
+.cell:nth-child(n + 55):nth-child(-n + 63) {
+  border-top: 2px solid #344861;
+}
+
+.numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 25px;
+  height: 100px;
+  gap: 1px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-self: center; */
+  width: 100px;
+  aspect-ratio: 1;
+  background-color: #eaeef4;
+  border: none;
+  border-radius: 20%;
+}
+
+.number:hover{
+    background-color: #d7dfe6;
+}
+
+.selected-num{
+    background-color: #d7dfe6;
+}
